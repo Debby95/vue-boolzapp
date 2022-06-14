@@ -8,10 +8,6 @@ a {
     color: black;
 }
 
-.selected {
-    background-color: #E9EBEB;
-}
-
 .light-grey {
     background-color: #EAEAEA;
 }
@@ -31,8 +27,7 @@ a {
 }
 
 .sidebar {
-    border: 3px dashed red;
-    width: 300px;
+    width: 500px;
     height: 95vh;
     margin-top: 2.5vh;
     margin-bottom: 2.5vh;
@@ -41,8 +36,7 @@ a {
 }
 
 .chat-container {
-    border: 3px dashed blue;
-    width: 800px;
+    width: 1000px;
     background-color: #FFFFFF;
     position: relative;
     height: 95vh;
@@ -58,11 +52,20 @@ a {
 
 .chat {
     background-image: url(../img/mine.jpg);
-    height: 77vh;
+    height: 83vh;
+}
+
+.user {
+    height: 76vh;
 }
 
 .bell {
     background-color: #8EDAFC;
+}
+
+.bell-slash {
+    width: 40px;
+    background-color: white;
 }
 
 .green-box {
