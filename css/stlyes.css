@@ -1,0 +1,76 @@
+:root {
+    --bs-body-bg: #DBDBD3;
+    --bs-top-bg: #029688;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.selected {
+    background-color: #E9EBEB;
+}
+
+.light-grey {
+    background-color: #EAEAEA;
+}
+
+.fs-sm {
+    font-size: 10px;
+}
+
+.top-bg {
+    height: 200px;
+    background-color: var(--bs-top-bg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+}
+
+.sidebar {
+    border: 3px dashed red;
+    width: 300px;
+    height: 95vh;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    position: relative;
+    background-color: #FFFFFF;
+}
+
+.chat-container {
+    border: 3px dashed blue;
+    width: 800px;
+    background-color: #FFFFFF;
+    position: relative;
+    height: 95vh;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+}
+
+.topbar {
+    width: 800px;
+    height: 80px;
+    border: 3px dashed rgb(131, 53, 101);
+}
+
+.chat {
+    background-image: url(../img/mine.jpg);
+    height: 77vh;
+}
+
+.bell {
+    background-color: #8EDAFC;
+}
+
+.green-box {
+    height: 30px;
+    background-color: #D5F9BA;
+    
+}
+
+
+
+
