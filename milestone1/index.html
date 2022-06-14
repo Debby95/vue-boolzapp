@@ -44,50 +44,8 @@
                     <div class="users-container">
                         <div class="row ">
                             <div class="d-flex flex-column">
-                                <div class="col p-3 selected">
-                                    <a href="">Michele</a>
-                                    <div class="fs-sm">
-                                        <div>Ultimo mess inviato</div>
-                                    </div>
-                                </div>
-                                <div class="col p-3">
-                                    <a href="">Fabio</a>
-                                    <div class="fs-sm">
-                                        <div>Ultimo mess inviato</div>
-                                    </div>
-                                </div>
-                                <div class="col p-3">
-                                    <a href="">Samuele</a>
-                                    <div class="fs-sm">
-                                        <div>Ultimo mess inviato</div>
-                                    </div>
-                                </div>
-                                <div class="col p-3">
-                                    <a href="">Alessadnro b.</a>
-                                    <div class="fs-sm">
-                                        <div>Ultimo mess inviato</div>
-                                    </div>
-                                </div>
-                                <div class="col p-3">
-                                    <a href="">alessadnro l.</a>
-                                    <div class="fs-sm">
-                                        <div>Ultimo mess inviato</div>
-                                    </div>
-                                </div>
-                                <div class="col p-3">
-                                    <a href="">claudia</a>
-                                    <div class="fs-sm">
-                                        <div>Ultimo mess inviato</div>
-                                    </div>
-                                </div>
-                                <div class="col p-3">
-                                    <a href="">federico</a>
-                                    <div class="fs-sm">
-                                        <div>Ultimo mess inviato</div>
-                                    </div>
-                                </div>
-                                <div class="col p-3">
-                                    <a href="">davide</a>
+                                <div class="col p-3 selected" v-for="(user, i) in contactList">
+                                    <a href="">{{user.name}}</a>
                                     <div class="fs-sm">
                                         <div>Ultimo mess inviato</div>
                                     </div>
