@@ -44,6 +44,14 @@ a {
     margin-bottom: 2.5vh;
 }
 
+.users-container {
+    background-color: #FFFFFF;
+    position: relative;
+    height: 70vh;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+}
+
 .topbar {
     width: 800px;
     height: 80px;
@@ -64,10 +72,17 @@ a {
     background-color: white;
 }
 
-.green-box {
+.box-chat {
     height: 30px;
-    background-color: #D5F9BA;
     
+}
+
+.sent {
+    background-color: #D5F9BA;
+}
+
+.received {
+    background-color: #FFFFFF;
 }
 
 .user-img {
