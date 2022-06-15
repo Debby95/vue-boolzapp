@@ -52,11 +52,7 @@ a {
 
 .chat {
     background-image: url(../img/mine.jpg);
-    height: 83vh;
-}
-
-.user {
-    height: 76vh;
+    height: 80vh;
 }
 
 .bell {
