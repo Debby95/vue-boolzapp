@@ -2,6 +2,7 @@ new Vue ({
     el: '#app',
     data: {
       currentIndex: 0,
+      textNewMessage: "",
       contactList: [
         {
           name: "Michele",
@@ -175,7 +176,7 @@ new Vue ({
 
       //creo una funzione che mi permette di inviare il messaggio
       sendMessage(message) {
-        this.contactList[this.currentIndex].messages.push({ 
+        this.textNewMessage[this.currentIndex].messages.push({ 
           message: "",
           status: "sent",
         });
