@@ -172,5 +172,17 @@ new Vue ({
         this.currentIndex = index;
         console.log(this.currentIndex);
       },
+
+      //creo una funzione che mi permette di inviare il messaggio
+      sendMessage(message) {
+        this.contactList[this.currentIndex].messages.push({ 
+          message: "",
+          status: "sent",
+        });
+
+        this.sendMessage = "";
+      },
+
+
     },
   });
