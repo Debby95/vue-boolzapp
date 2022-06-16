@@ -185,16 +185,15 @@ new Vue ({
         this.sendMessage = "";
       },
 
+       //creo una funzione che manda un messaggio automatico con scritto ok dopo 1 secondo che ho inviato un messaggio
       autoReply(message) {
-        this.contactList[this.currentIndex].messages.push({ 
-          message: this.textNewMessage,
-          status: "sent",
-          newMessage: "",
-        });
-
-        this.sendMessage = "";
+        setTimeout ( () => {
+          this.contactList[this.currentIndex].messages.push({
+            message: "Ok",
+            status: "received"
+          });
+          this.autoReply = "";
+        }, 1000);
       },
-
-
     },
   });
