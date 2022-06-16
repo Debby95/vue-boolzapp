@@ -180,20 +180,29 @@ new Vue ({
           message: this.textNewMessage,
           status: "sent",
           newMessage: "",
+          
         });
+        
+        //metto il timeout nei mess che invio
+        setTimeout ( () => {
+          this.autoReply();
+        }, 1000);
 
         this.sendMessage = "";
       },
 
-       //creo una funzione che manda un messaggio automatico con scritto ok dopo 1 secondo che ho inviato un messaggio
-      autoReply(message) {
-        setTimeout ( () => {
-          this.contactList[this.currentIndex].messages.push({
-            message: "Ok",
-            status: "received"
-          });
-          this.autoReply = "";
-        }, 1000);
+      //creo una funzione che manda un messaggio automatico con scritto ok dopo 1 secondo che ho inviato un messaggio
+      autoReply() {
+        this.contactList[this.currentIndex].messages.push({
+          message: "Ok",
+          status: "received"
+        });
+      },
+
+      //creo una funzione che filtra gli utenti
+      filterUser(search) {
+        user.visible = user.name.toLowerCase().includes(search.toLowerCase());
+        return this.contactList.filter()
       },
     },
   });

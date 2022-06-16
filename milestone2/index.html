@@ -57,7 +57,7 @@
 
                         <!-- users container -->
                         <div class="users-container d-flex flex-column flex-grow-1 overflow-scroll">
-                            <div class="p-2" v-for="(user, i) in contactList " @click="changeUserChat(i)">
+                            <div class="p-2" v-for="(user, i) in contactList " @click="changeUserChat(i) ">
                                 <!-- profile picture -->
                                 <img class="rounded-circle user-img" :src="`../img/avatar${user.avatar}.jpg`" alt="">
                                 <span>{{user.name}}</span>
