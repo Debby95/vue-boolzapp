@@ -177,7 +177,17 @@ new Vue ({
       //creo una funzione che mi permette di inviare il messaggio
       sendMessage(message) {
         this.contactList[this.currentIndex].messages.push({ 
-          message: "",
+          message: this.textNewMessage,
+          status: "sent",
+          newMessage: "",
+        });
+
+        this.sendMessage = "";
+      },
+
+      autoReply(message) {
+        this.contactList[this.currentIndex].messages.push({ 
+          message: this.textNewMessage,
           status: "sent",
           newMessage: "",
         });
