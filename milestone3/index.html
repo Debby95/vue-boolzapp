@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="../css/stlyes.css">
+</head>
+<body>
+    <!-- creo top-bg -->
+    <div class="top-bg">
+
+    </div>
+
+    <div id="app">
+        <div class="app-container d-flex px-5">
+            <div class="row g-0">
+                <div class="col">
+                    <div class="sidebar flex-grow-0">
+                        <div class="nav light-grey d-flex justify-content-between p-3">
+                            <!-- sofia -->
+                            <div>
+                                <img class="rounded-circle user-img" src="../img/avatar_io.jpg" alt="">
+                                <span>Sofia</span>
+                            </div>
+                            
+                            <!-- icons -->
+                            <div>
+                                <ul class="list-unstyled d-flex ">
+                                    <li><i class="fas fa-circle-notch"></i></li>
+                                    <li><i class="fas fa-comment-alt"></i></li>
+                                    <li><i class="fas fa-ellipsis-v"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- notifiche -->
+                        <div class="bell p-3 d-flex">
+                            <svg class="bell-slash rounded-circle" xmlns="http://www.w3.org/2000/svg" fill="#8EDAFC" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M186 120.5C209 85.38 245.4 59.84 288 51.2V32C288 14.33 302.3 .0003 320 .0003C337.7 .0003 352 14.33 352 32V51.2C425 66.03 480 130.6 480 208V226.8C480 273.9 497.3 319.2 528.5 354.4L535.9 362.7C544.3 372.2 546.4 385.6 541.2 397.1C540.1 397.5 540.8 397.1 540.6 398.4L630.8 469.1C641.2 477.3 643.1 492.4 634.9 502.8C626.7 513.2 611.6 515.1 601.2 506.9L9.196 42.89C-1.236 34.71-3.065 19.63 5.112 9.196C13.29-1.236 28.37-3.065 38.81 5.112L186 120.5zM160 226.8V222.1L406.2 416H128C115.4 416 103.1 408.6 98.81 397.1C93.65 385.6 95.71 372.2 104.1 362.7L111.5 354.4C142.7 319.2 160 273.9 160 226.8V226.8zM320 512C303 512 286.7 505.3 274.7 493.3C262.7 481.3 256 464.1 256 448H384C384 464.1 377.3 481.3 365.3 493.3C353.3 505.3 336.1 512 320 512z"/></svg>
+                            <div class="mx-3">
+                                <a href="">Ricevi notifiche di nuovi messaggi</a>
+                                <div class="fs-sm text-decoration-underline">
+                                    <a href="">Attiva notifiche desktop</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- search contact -->
+                        <div class="p-3 ">
+                            <input class="w-100" placeholder="Cerca o inizia una nuova chat" type="text">
+                        </div>
+
+                        <!-- users container -->
+                        <div class="users-container d-flex flex-column flex-grow-1 overflow-scroll">
+                            <div class="p-2" v-for="(user, i) in contactList " @click="changeUserChat(i) ">
+                                <!-- profile picture -->
+                                <img class="rounded-circle user-img" :src="`../img/avatar${user.avatar}.jpg`" alt="">
+                                <span>{{user.name}}</span>
+                                <!-- last message -->
+                                <div class="fs-sm">
+                                    <div>Ultimo mess inviato</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- chat container -->
+            <div class="chat-container">
+                <div class="row g-0">
+                    <div class="top-bar flex-shrink-0 light-grey p-3">
+                        <div class="col d-flex justify-content-between">
+                            <div>
+                                <img class="rounded-circle user-img" :src="`../img/avatar${contactList[currentIndex].avatar}.jpg`" alt="">
+                                <span>{{contactList[currentIndex].name}}<span>
+                            </div>
+
+                            <div>
+                                <ul class="list-unstyled d-flex">
+                                    <li><i class="fas fa-ellipsis-v"></i></li>
+                                    <li><i class="fas fa-paperclip"></i></li>
+                                    <li><i class="fas fa-search"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat flex-grow-1 p-5 overflow-scroll"  >
+                    <div class="d-flex" 
+                        v-for="(messages, i) in contactList[currentIndex].messages " 
+                        :class="messages.status === 'sent' ? 'justify-content-end': ''">
+                        <div class="box-chat w-50 rounded m-4 p-4" 
+                        :class="messages.status === 'sent' ? 'sent' : 'received'">
+                            <div>{{messages.message}}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="type-bar flex-shrink-0 light-grey p-3">
+                    <div class="d-flex justify-content-between">
+                        <i class="far fa-smile"></i>
+                        <input class="w-100"  type="text" 
+                        v-model="textNewMessage" @keyup.13="sendMessage">
+
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    
+</body>
+</html>
