@@ -8,6 +8,19 @@ a {
     color: black;
 }
 
+ul {
+    margin-top: 15px;
+}
+
+li {
+    margin-right: 10px;
+}
+
+
+.app-container {
+    justify-content: center;
+}
+
 .light-grey {
     background-color: #EAEAEA;
 }
@@ -83,6 +96,8 @@ a {
 .user-img {
     width: 50px;
 }
+
+
 
 
 
